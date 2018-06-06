@@ -9,7 +9,7 @@
 	<property name="code.src.dir" location="src" />
 
 	<path id="class.path">
-		<pathelement location="${lib.dir}/junit-4.10.jar" />
+		<fileset dir="${lib.dir}" includes="**/*.jar" />
 		<pathelement location="${build.dir}" />
 	</path>
 
