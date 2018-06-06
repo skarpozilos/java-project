@@ -1,2 +1,2 @@
 # java-project
-Java Project for Jenkins test.
+Java Project for Jenkins test
