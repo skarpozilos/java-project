@@ -2,14 +2,11 @@
 <project name="Rectangle-Test" default="main" basedir=".">
 	<property environment="env"/>
 
-	<property name="src.dir" location="src" />
-	<property name="build.dir" location="bin" />
-	<property name="report.dir" location="reports" />
-	<property name="lib.dir" location="lib" />
-
-	<path id="src.path">
-		<pathelement location="${src.dir}" />
-	</path>
+        <property name="src.dir" location="tests/src" />
+	<property name="build.dir" location="tests/bin" />
+	<property name="report.dir" location="tests/reports" />
+	<property name="lib.dir" location="tests/lib" />
+        <property name="code.src.dir" location="src" />
 
 	<path id="class.path">
 		<pathelement location="${lib.dir}/junit-4.10.jar" />
@@ -28,7 +25,8 @@
 
 	<target name="compile" depends="makedir">
 		<javac destdir="${build.dir}">
-			<srcpath refid="src.path" />
+			<src path="${src.dir}" />
+                        <src path="${code.src.dir}" />
 			<classpath refid="class.path" />
 		</javac>
 	</target>

@@ -1,6 +1,7 @@
 bin/*
 dist/*
-reports/*
 docs/*
+tests/bin/*
+tests/reports/*
 .vs/*
 *.vs/
