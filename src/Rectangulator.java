@@ -5,7 +5,7 @@ public class Rectangulator {
     String output;
 
     if ( args.length != 2) {
-      output = "*** ERROR. No parameters provided ***\n\n";
+      output = "*** ERROR. Incorrect number of parameters provided. Need 2 (length and width) ***\n\n";
     } else {
       length = Integer.parseInt(args[0]);
       width = Integer.parseInt(args[1]);
