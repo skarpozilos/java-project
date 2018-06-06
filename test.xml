@@ -7,6 +7,10 @@
 	<property name="report.dir" location="reports" />
 	<property name="lib.dir" location="lib" />
 
+	<path id="src.path">
+		<pathelement location="${src.dir}" />
+	</path>
+
 	<path id="class.path">
 		<pathelement location="${lib.dir}/junit-4.10.jar" />
 		<pathelement location="${build.dir}" />
@@ -23,7 +27,8 @@
 	</target>
 
 	<target name="compile" depends="makedir">
-		<javac srcdir="${src.dir}" destdir="${build.dir}">
+		<javac destdir="${build.dir}">
+			<srcpath refid="src.path" />
 			<classpath refid="class.path" />
 		</javac>
 	</target>
