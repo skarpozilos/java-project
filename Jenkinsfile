@@ -6,6 +6,21 @@ pipeline {
   }
   
   stages {
+    stage('Say Hello') {
+        steps {
+            sayHello 'Awesome Student!'
+        }
+    }
+    stage('Git Information') {
+        steps {
+            echo "Branch Name: ${env.BRANCH_NAME}"
+            echo "Workspace: ${env.WORKSPACE}"
+            script{
+                def myLib = new linuxacademy.git.gitStuff();
+                echo "My Commit: ${myLib.gitCommit("${env.WORKSPACE}/.git")}"
+            }
+        }
+    }
     stage('Unit Tests') {
 	  steps {
 	    sh 'ant -f test.xml -v'
